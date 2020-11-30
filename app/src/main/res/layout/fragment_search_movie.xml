@@ -1,0 +1,45 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="dataname"
+            type="project.viewmodel.SearchMovieViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layoutDirection="ltr"
+        tools:context="project.view.fragment.SearchMovieFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edtSearchMovieName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@={dataname.name}"
+                android:layout_height="48dp"/>
+
+            <ImageView
+
+                android:id="@+id/imgSearch"
+                android:onClick="@{dataname::click_Search}"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@android:drawable/ic_menu_search" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+    <variable
+        name="data"
+        type="project.model.search_movie.Result" />
+</data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                app:image="@{data.posterPath}"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_star_24"></ImageView>
+
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:text="@{data.voteAverage.toString()}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_emoji_events_24"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:text="@{data.voteCount.toString()}" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.title}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{data.overview}"
+                android:textColor="@android:color/darker_gray" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
